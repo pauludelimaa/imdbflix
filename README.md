@@ -1,14 +1,13 @@
-# MoviesLib
+# imdbFlix
 
 ## ✅ Sobre o projeto
-[movieslib.com](https://movies-lib-rho.vercel.app/)
 
 Este projeto é uma aplicação web que utiliza a API do TMDb (The Movie Database) para exibir informações sobre filmes. A aplicação permite aos usuários explorar diferentes categorias de filmes, incluindo os melhores filmes, os mais populares e os lançamentos em breve
 
 ## 🔗 Layout
-![image](https://github.com/user-attachments/assets/ef57b466-77c1-4e31-8f3b-8bbeb599bd6f)
+![image](https://github.com/pauludelimaa/imdbflix/blob/main/imdbflixprint.png)
 
-![image](https://github.com/user-attachments/assets/196e1f64-47ab-43e7-a8d0-6c0c2b29329d)
+![image](https://github.com/pauludelimaa/imdbflix/blob/main/lancandoembreve.png)
 
 
 ## 💻 Tecnologias usadas
@@ -22,17 +21,17 @@ Este projeto é uma aplicação web que utiliza a API do TMDb (The Movie Databas
 ## 📌 Como executar o projeto
 
 ```
-# clonar o repositório
-git clone https://github.com/Rayane-Souza/MoviesLib.git
+# Clonar o repositório
+git clone https://github.com/pauludelimaa/imdbflix.git
 
-# Entre na pasta
- cd filmesprojects
+# Entrar na pasta
+cd filmesprojects
 
-# No terminal execute 
- npm i
+# No terminal, execute 
+npm i
 
-# Depois no terminal execute 
- npm run dev
+# Depois, execute 
+npm run dev
 
 ```
 ## Author
@@ -40,8 +39,8 @@ git clone https://github.com/Rayane-Souza/MoviesLib.git
 <table>
   <tr>
     <td>
-      Rayane Souza<br>
-      <a href="https://www.linkedin.com/in/rayanekelly/" target="_blank">
+      Paulo Santos<br>
+      <a href="https://www.linkedin.com/in/paulo-a-santos-60ab17312/" target="_blank">
         <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank">
       </a>
     </td>
