@@ -39,7 +39,7 @@ npm run dev
 <table>
   <tr>
     <td>
-      Rayane Souza<br>
+      Paulo Santos<br>
       <a href="https://www.linkedin.com/in/paulo-a-santos-60ab17312/" target="_blank">
         <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank">
       </a>
