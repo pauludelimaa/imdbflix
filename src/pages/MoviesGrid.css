@@ -1,91 +1,95 @@
+body {
+    background-color: #141414; /* Fundo escuro */
+    font-family: 'Arial', sans-serif;
+}
+
 .container {
     padding: 2rem;
     max-width: 1200px;
     margin: 0 auto;
-  }
-  
-  .title {
-    color: #e0f7fa; 
+}
+
+.title {
+    color: #E50914; /* Vermelho Netflix */
     font-size: 2.5rem;
     text-align: center;
+    font-weight: bold;
     margin-bottom: 1rem;
-  }
-  
-  .button-container {
+}
+
+.button-container {
     display: flex;
     justify-content: center;
     gap: 1rem;
     margin-bottom: 2rem;
-  }
-  
-  .button-container button {
-    background-color: #4caf50; 
+}
+
+.button-container button {
+    background-color: #E50914; /* Vermelho Netflix */
     border: none;
     border-radius: 4px;
-    color: #fff; 
-    padding: 0.5rem 1rem;
+    color: #fff;
+    padding: 0.7rem 1.5rem;
     font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .button-container button:hover {
-    background-color: #80e27e; 
-  }
-  
-  .movies-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    transition: background-color 0.3s ease;
+}
+
+.button-container button:hover {
+    background-color: #B20710; /* Tom mais escuro */
+}
+
+.movies-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Layout responsivo */
     gap: 1rem;
-  }
-  
-  .movies-container .movie-card {
-    width: calc(33.333% - 1rem); 
-    background-color: #263238;
-    color: #e0f7fa; 
-    border-radius: 8px;
     padding: 1rem;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .movies-container .movie-card img {
+}
+
+.movie-card {
+    background-color: #222;
+    color: #fff;
+    border-radius: 8px;
+    padding: 0.5rem;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.movie-card:hover {
+    transform: scale(1.05); /* Efeito de destaque */
+}
+
+.movie-card img {
     max-width: 100%;
     border-radius: 4px;
-  }
-  
-  .movies-container .movie-card h2 {
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-  }
-  
-  .movies-container .movie-card p {
-    margin-bottom: 1rem;
-  }
-  
-  .movies-container .movie-card svg {
-    color: #4caf50; 
-  }
-  
-  .movies-container .movie-card .details-button {
-    background-color: #f7d354; 
-    border: 2px solid #f7d354; 
+}
+
+.movie-card h2 {
+    font-size: 1.3rem;
+    text-align: center;
+    margin: 0.5rem 0;
+}
+
+.movie-card p {
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.details-button {
+    background-color: #E50914;
+    border: 2px solid #E50914;
     border-radius: 4px;
-    color: #000; 
+    color: white;
     padding: 0.5rem 1rem;
     font-size: 1rem;
     cursor: pointer;
+    display: block;
+    margin: 0.5rem auto;
     text-align: center;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    margin-top: auto; 
-  }
-  
-  .movies-container .movie-card .details-button:hover {
+    transition: background-color 0.3s ease;
+}
+
+.details-button:hover {
     background-color: transparent;
-    color: #f7d354; 
-    border-color: #f7d354; 
-  }
-  
+    color: #E50914;
+}

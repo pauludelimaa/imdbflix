@@ -3,7 +3,9 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #141414; /* preto Netflix */
+  background-color: #141414;
+  position: relative; /* Necessário para z-index funcionar corretamente neste contexto */
+  z-index: 100;      /* Um valor alto para garantir que fique no topo */
 }
 
 #navbar h2 a {
