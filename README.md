@@ -1,7 +1,6 @@
-# MoviesLib
+# imdbFlix
 
 ## ✅ Sobre o projeto
-[movieslib.com](https://movies-lib-rho.vercel.app/)
 
 Este projeto é uma aplicação web que utiliza a API do TMDb (The Movie Database) para exibir informações sobre filmes. A aplicação permite aos usuários explorar diferentes categorias de filmes, incluindo os melhores filmes, os mais populares e os lançamentos em breve
 
@@ -22,17 +21,17 @@ Este projeto é uma aplicação web que utiliza a API do TMDb (The Movie Databas
 ## 📌 Como executar o projeto
 
 ```
-# clonar o repositório
-git clone https://github.com/Rayane-Souza/MoviesLib.git
+# Clonar o repositório
+git clone https://github.com/pauludelimaa/imdbflix.git
 
-# Entre na pasta
- cd filmesprojects
+# Entrar na pasta
+cd filmesprojects
 
-# No terminal execute 
- npm i
+# No terminal, execute 
+npm i
 
-# Depois no terminal execute 
- npm run dev
+# Depois, execute 
+npm run dev
 
 ```
 ## Author
@@ -41,7 +40,7 @@ git clone https://github.com/Rayane-Souza/MoviesLib.git
   <tr>
     <td>
       Rayane Souza<br>
-      <a href="https://www.linkedin.com/in/rayanekelly/" target="_blank">
+      <a href="https://www.linkedin.com/in/paulo-a-santos-60ab17312/" target="_blank">
         <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank">
       </a>
     </td>
