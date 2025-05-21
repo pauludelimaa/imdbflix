@@ -1,0 +1,21 @@
+* {
+  font-family: Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #141414; /* tom escuro característico da Netflix */
+  color: #ffffff; /* texto principal em branco */
+}
+
+a {
+  text-decoration: none;
+  color: #e50914; /* vermelho vibrante da Netflix */
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #f40612; /* vermelho um pouco mais claro para o hover */
+}

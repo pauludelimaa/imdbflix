@@ -1,0 +1,149 @@
+/* ... seu CSS existente ... */
+
+.movie-page {
+  color: #ffffff;
+  /* display: grid;  Seu comentário sobre 'grid' vs 'flex' aqui é pertinente.
+                     Se é uma coluna única, 'display: flex; flex-direction: column;' ou
+                     'display: block;' (default para divs) pode ser mais apropriado. */
+  display: flex; /* Assumindo que você quer um layout flex para a página */
+  flex-direction: column;
+  align-items: center; /* Centraliza o conteúdo da página de detalhes */
+  max-width: 600px; /* Você pode querer ajustar isso para 800px ou mais para páginas de detalhes */
+  margin: 2rem auto;
+}
+
+.movie-page svg { /* SVG dentro da página de detalhes */
+  font-size: 1.5rem;
+  color: #e50914;
+}
+
+/* --- ESTILOS BASE COMUNS PARA .movie-card --- */
+/* Aplicam-se tanto ao card na página de detalhes quanto aos cards na grade */
+.movie-card { /* Removido .movie-page e .movies-container daqui para ser mais geral */
+  text-align: center;
+  background-color: #1a1a1a;
+  padding: 1rem;
+  border-radius: 8px;
+  color: #ffffff;
+  /* Outros estilos base que são comuns a todos os movie-cards: */
+  /* width, max-width, etc., se aplicável de forma geral */
+  /* Exemplo: width: 250px; ou width: 100% (e o container pai controla a largura) */
+}
+
+/* Elementos internos do .movie-card (estilos gerais) */
+.movie-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px; /* Bordas arredondadas para a imagem */
+  margin-bottom: 1rem;
+}
+.movie-card h2 {
+  /* margin-bottom: 1rem; -- Será definido especificamente abaixo */
+  /* font-size: 2rem; -- Será definido especificamente abaixo */
+  color: #ffffff;
+}
+.movie-card p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  color: #b3b3b3;
+  /* margin-bottom: 1rem; -- Será definido especificamente abaixo */
+}
+
+
+/* --- ESTILOS ESPECÍFICOS PARA O CARD NA PÁGINA DE DETALHES (.movie-page .movie-card) --- */
+.movie-page .movie-card {
+  /* Defina aqui os estilos específicos para o card DENTRO da página de detalhes */
+  /* Por exemplo, pode ter uma largura diferente ou margens específicas */
+  width: 100%; /* Ocupa a largura do .movie-page (que tem max-width: 600px) */
+  max-width: 400px; /* Ou um valor fixo para o poster na página de detalhes */
+  margin-bottom: 1.5rem; /* Espaçamento abaixo do card na página de detalhes */
+  /* SEM transition, SEM cursor:pointer, SEM hover de pulo aqui */
+}
+
+
+.movie-page .movie-card h2 { /* Título dentro do card na página de detalhes */
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.movie-page .movie-card p { /* Parágrafo (ex: nota) dentro do card na página de detalhes */
+  margin-bottom: 1rem;
+  font-size: 1.1rem; /* Um pouco maior na página de detalhes */
+}
+/* Se você quiser explicitamente anular o hover (embora não deva ser necessário se não definido) */
+.movie-page .movie-card:hover {
+  transform: none;
+  box-shadow: none; /* Ou a sombra padrão do card se ele tiver uma */
+}
+
+
+/* --- ESTILOS ESPECÍFICOS PARA OS CARDS NA GRADE (.movies-container .movie-card) --- */
+.movies-container .movie-card {
+  /* Defina aqui os estilos específicos para os cards DENTRO da grade */
+  width: calc(33.333% - 1rem); /* Exemplo de largura para grade de 3 colunas */
+  /* ... outros estilos de layout para a grade se necessário ... */
+
+  /* EFEITO DE HOVER PARA A GRADE */
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+  cursor: pointer;
+}
+
+.movies-container .movie-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 0 15px rgba(229, 9, 20, 0.3);
+  /* border: 1px solid #e50914; */
+}
+
+.movies-container .movie-card h2 { /* Título dentro dos cards na grade */
+  font-size: 1.3rem; /* Menor para caber melhor nos cards da grade */
+  margin-bottom: 0.5rem;
+}
+.movies-container .movie-card p { /* Parágrafo (ex: nota) dentro dos cards na grade */
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+
+/* --- ESTILOS GERAIS PARA ELEMENTOS FORA DOS CARDS --- */
+.tagline {
+  text-align: center;
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  color: #e50914;
+}
+
+.info { /* Container para Budget, Revenue, etc. na página de detalhes */
+  margin-bottom: 1.5rem;
+  width: 100%; /* Para ocupar a largura do .movie-page */
+  padding: 0 1rem; /* Para alinhar com o card se ele tiver padding */
+  box-sizing: border-box;
+}
+
+.info h3 {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ffffff;
+}
+
+.description { /* Container para a descrição na página de detalhes */
+  width: 100%;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+.description p {
+  line-height: 1.4rem;
+  color: #b3b3b3;
+}
+
+/* Estilos para o .movies-container (container da grade) */
+.movies-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Espaçamento entre os cards */
+  padding: 20px 0;
+  padding-top: 30px; /* Espaço no topo para o pulo não ser cortado */
+}
