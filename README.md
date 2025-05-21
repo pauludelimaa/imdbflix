@@ -5,7 +5,7 @@
 Este projeto é uma aplicação web que utiliza a API do TMDb (The Movie Database) para exibir informações sobre filmes. A aplicação permite aos usuários explorar diferentes categorias de filmes, incluindo os melhores filmes, os mais populares e os lançamentos em breve
 
 ## 🔗 Layout
-![image](https://github.com/user-attachments/assets/ef57b466-77c1-4e31-8f3b-8bbeb599bd6f)
+![image](https://github.com/pauludelimaa/imdbflix/blob/main/imdbflixprint.png)
 
 ![image](https://github.com/user-attachments/assets/196e1f64-47ab-43e7-a8d0-6c0c2b29329d)
 
