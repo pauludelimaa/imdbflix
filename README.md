@@ -7,7 +7,7 @@ Este projeto é uma aplicação web que utiliza a API do TMDb (The Movie Databas
 ## 🔗 Layout
 ![image](https://github.com/pauludelimaa/imdbflix/blob/main/imdbflixprint.png)
 
-![image](https://github.com/user-attachments/assets/196e1f64-47ab-43e7-a8d0-6c0c2b29329d)
+![image](https://github.com/pauludelimaa/imdbflix/blob/main/lancandoembreve.png)
 
 
 ## 💻 Tecnologias usadas
