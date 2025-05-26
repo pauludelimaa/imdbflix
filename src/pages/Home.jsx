@@ -19,9 +19,9 @@ const Home = () => {
   };
 
   useEffect(() => {
-    const topRatedUrl = `${moviesURL}top_rated?${apiKey}`;
-    const popularUrl = `${moviesURL}popular?${apiKey}`;
-    const upcomingUrl = `${moviesURL}upcoming?${apiKey}`;
+    const topRatedUrl = `${moviesURL}top_rated?${apiKey}&language=pt-BR`;
+    const popularUrl = `${moviesURL}popular?${apiKey}&language=pt-BR`;
+    const upcomingUrl = `${moviesURL}upcoming?${apiKey}&language=pt-BR`;
 
     if (category === "top_rated") {
       getMovies(topRatedUrl, setTopMovies);
