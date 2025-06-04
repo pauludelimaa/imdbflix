@@ -1,86 +1,79 @@
+/* Movie.css */
+
 :root {
-  --navbar-height: 70px; /* AJUSTE ESTE VALOR para a altura REAL do seu navbar */
+  /* Certifique-se que este valor corresponde à altura real do seu Navbar.
+     Se já estiver definido em um CSS global, não precisa repetir aqui. */
+  --navbar-height: 70px;
 }
 
-/* Container principal que terá a imagem de fundo */
+.loading-message { /* Estilo para a mensagem de carregamento */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - var(--navbar-height)); /* Ocupa o espaço abaixo do navbar */
+  font-size: 1.5rem;
+  color: #ccc;
+}
+
 .movie-detail-container {
-  position: relative; /* Para o posicionamento absoluto do ::before */
+  position: relative;
   width: 100%;
-  /*
-    A altura mínima deve ser a da viewport MENOS a altura do navbar,
-    para que ele preencha o espaço ABAIXO do navbar.
-  */
   min-height: calc(100vh - var(--navbar-height));
   background-size: cover;
-  background-position: center center; /* Centraliza a imagem no espaço disponível */
+  background-position: center center;
   background-repeat: no-repeat;
-  /*
-    Este padding-top é para o espaço ENTRE o início do movie-detail-container
-    (que já está abaixo do navbar) e o conteúdo INTERNO (.movie-page-content).
-  */
   padding-top: 2rem;
   padding-bottom: 2rem;
   box-sizing: border-box;
-  /* display: flex; flex-direction: column; pode ser útil se você quiser
-     que o .movie-page-content se comporte de maneira flexível dentro dele */
 }
 
-/* Overlay para aplicar o blur */
 .movie-detail-container::before {
   content: "";
   position: absolute;
-  /*
-    top: 0, left: 0, right: 0, bottom: 0 fará com que o ::before
-    cubra exatamente as dimensões do .movie-detail-container (que já está
-    abaixo do navbar e tem a altura correta).
-  */
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: inherit; /* Herda o background-image e sua posição do pai */
-  background-size: inherit; /* Herda o background-size do pai */
-  background-position: inherit; /* Herda o background-position do pai */
-  filter: blur(10px) brightness(0.6);
-  z-index: 1; /* Fica atrás do conteúdo */
-  transform: scale(1.05); /* Ajuda com as bordas do blur */
+  background: inherit;
+  background-size: inherit;
+  background-position: inherit;
+  filter: blur(10px) brightness(0.6); /* Ajuste o blur e brilho conforme gosto */
+  z-index: 1;
+  transform: scale(1.05); /* Evita bordas nítidas do blur */
 }
 
-/* Container do conteúdo da página, por cima do backdrop */
 .movie-page-content {
-  position: relative; /* Para ficar acima do overlay */
+  position: relative;
   z-index: 2;
   color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 700px;
-  margin: 0 auto; /* Centraliza horizontalmente */
-  padding: 1rem;
+  margin: 0 auto;
+  padding: 1rem 1.5rem; /* Ajustei o padding lateral */
   border-radius: 8px;
-  /* O padding-top do .movie-detail-container já deu o espaçamento do topo */
+  /* Opcional: um leve fundo para destacar o conteúdo do fundo com blur */
+  /* background-color: rgba(0, 0, 0, 0.2); */
 }
 
-/* Ajustes nos estilos existentes para que herdem .movie-page-content */
-/* .movie-page se torna .movie-page-content */
-
-.movie-page-content svg { /* SVG dentro da página de detalhes */
+.movie-page-content svg {
   font-size: 1.5rem;
   color: #e50914; /* Netflix red */
 }
 
-/* Card dentro da página de detalhes */
 .movie-page-content .movie-card {
   width: 100%;
-  max-width: 350px; /* Ajuste conforme necessário */
+  max-width: 350px;
   margin-bottom: 1.5rem;
-  background-color: #1f1f1f; /* Um pouco mais claro que o fundo geral */
+  background-color: #1f1f1f;
   padding: 1.5rem;
   box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  border-radius: 8px; /* Adicionado para consistência */
 }
 
 .movie-page-content .movie-card h2 {
-  font-size: 1.8rem; /* Ajustado */
+  font-size: 1.8rem;
   margin-bottom: 1rem;
 }
 
@@ -91,9 +84,9 @@
 
 .movie-page-content .tagline {
   text-align: center;
-  font-size: 1.4rem; /* Aumentado */
+  font-size: 1.4rem;
   margin-bottom: 2rem;
-  color: #f5c518; /* IMDb yellow, ou mantenha o seu */
+  color: #f5c518; /* IMDb yellow, ou sua preferência */
   font-style: italic;
   padding: 0 1rem;
 }
@@ -101,50 +94,89 @@
 .movie-page-content .info {
   margin-bottom: 1.5rem;
   width: 100%;
-  max-width: 500px; /* Para não ficar muito largo */
-  padding: 0.8rem 1rem;
-  background-color: rgba(26, 26, 26, 0.7); /* Fundo sutil para os blocos de info */
+  max-width: 550px; /* Um pouco maior para acomodar melhor o texto */
+  padding: 1rem 1.2rem;
+  background-color: rgba(20, 20, 20, 0.75); /* Um pouco mais escuro e opaco */
   border-radius: 6px;
   box-sizing: border-box;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2); /* Sombra sutil */
 }
 
 .movie-page-content .info h3 {
-  margin-bottom: 0.8rem; /* Reduzido */
+  margin-bottom: 0.8rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
   color: #ffffff;
-  font-size: 1.2rem; /* Ajustado */
+  font-size: 1.2rem;
+  border-bottom: 1px solid #e50914; /* Linha decorativa */
+  padding-bottom: 0.5rem;
 }
 .movie-page-content .info p {
-    color: #cccccc;
-    font-size: 1rem;
+  color: #cccccc;
+  font-size: 1rem;
+  line-height: 1.5; /* Melhor legibilidade */
 }
 
-.movie-page-content .description {
-  width: 100%;
-  max-width: 600px; /* Para não ficar muito largo */
-  padding: 0.8rem 1rem;
-  background-color: rgba(26, 26, 26, 0.7); /* Fundo sutil */
-  border-radius: 6px;
-  box-sizing: border-box;
+.movie-page-content .description { /* Herda os estilos de .info mas pode ter especificidades */
+  max-width: 650px; /* Mais largo para a descrição */
 }
 .movie-page-content .description p {
-  line-height: 1.6; /* Melhorado para leitura */
+  line-height: 1.6;
   color: #dddddd;
-  font-size: 1rem;
 }
 
+/* Estilos para o Trailer */
+.movie-trailer {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 700px; /* Coerente com .movie-page-content */
+  text-align: center;
+}
 
-/* Seus outros estilos (.movies-container, etc.) permanecem como estão */
-/* ... seu CSS existente ... */
+.movie-trailer h3 {
+  margin-bottom: 1rem;
+  color: #ffffff;
+  font-size: 1.5rem;
+  border-bottom: 1px solid #e50914;
+  padding-bottom: 0.5rem;
+  display: inline-block; /* Para a borda se ajustar ao texto */
+}
 
+.video-responsive {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  background: #000;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+.video-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ESTILOS GERAIS DO MOVIE CARD (para a home page, por exemplo) */
+/* Se estes estilos já existem em outro lugar (ex: MovieCard.css ou MoviesGrid.css),
+   você pode removê-los daqui para evitar duplicidade. */
 .movie-card {
   text-align: center;
   background-color: #1a1a1a;
   padding: 1rem;
   border-radius: 8px;
   color: #ffffff;
+  display: flex; /* Adicionado para melhor controle interno */
+  flex-direction: column; /* Adicionado */
+  justify-content: space-between; /* Adicionado */
+  height: 100%; /* Para que todos os cards na grade tenham a mesma altura */
 }
 
 .movie-card img {
@@ -152,43 +184,77 @@
   height: auto;
   border-radius: 4px;
   margin-bottom: 1rem;
+  object-fit: cover; /* Para imagens de tamanhos variados */
 }
 .movie-card h2 {
   color: #ffffff;
+  font-size: 1.2rem; /* Ajustado para cards menores */
+  margin-bottom: 0.5rem;
+  flex-grow: 1; /* Para o título ocupar espaço e empurrar a nota para baixo */
 }
-.movie-card p {
+.movie-card p { /* Para a nota com estrela */
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.4rem;
   color: #b3b3b3;
+  font-size: 1rem;
 }
 
-.movies-container .movie-card {
-  width: calc(33.333% - 1rem); /* Exemplo de largura para grade de 3 colunas */
+/* ESTILOS PARA O CONTAINER DA GRADE DE FILMES (da home page) */
+/* Se estes estilos já existem em MoviesGrid.css, podem ser removidos daqui. */
+.movies-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Ou space-around, se preferir */
+  gap: 2rem; /* Aumentei o espaçamento */
+  padding: 2rem 1rem; /* Padding geral */
+  /* padding-top: 30px; */ /* Removido, pois o gap já cria espaço */
+}
+
+.movies-container .movie-card { /* Especificidade para cards na grade */
+  width: calc(100% / 5 - 2rem); /* 5 colunas em telas maiores, ajustando pelo gap */
+  /* max-width: 220px; */ /* Opcional: um max-width para os cards */
   transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
   cursor: pointer;
 }
 
 .movies-container .movie-card:hover {
   transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 0 15px rgba(229, 9, 20, 0.3);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 0 15px rgba(229, 9, 20, 0.4);
 }
 
-.movies-container .movie-card h2 {
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
+/* Media queries para responsividade da grade */
+@media (max-width: 1200px) {
+  .movies-container .movie-card {
+    width: calc(100% / 4 - 2rem); /* 4 colunas */
+  }
 }
-.movies-container .movie-card p {
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
+@media (max-width: 992px) {
+  .movies-container .movie-card {
+    width: calc(100% / 3 - 2rem); /* 3 colunas */
+  }
 }
-
-.movies-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px 0;
-  padding-top: 30px;
+@media (max-width: 768px) {
+  .movies-container .movie-card {
+    width: calc(100% / 2 - 2rem); /* 2 colunas */
+  }
+  .movie-page-content {
+    padding: 1rem; /* Menos padding em telas menores */
+  }
+}
+@media (max-width: 480px) {
+  .movies-container .movie-card {
+    width: calc(100% - 1rem); /* 1 coluna */
+    margin: 0 0.5rem; /* Centraliza um pouco */
+  }
+  .movie-page-content .movie-card { /* Card na página de detalhes */
+    max-width: 90%;
+  }
+  .movie-page-content .info {
+    max-width: 90%;
+  }
+  .movie-page-content .description {
+    max-width: 90%;
+  }
 }
